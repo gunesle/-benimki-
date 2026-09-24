@@ -11,7 +11,7 @@ class AIService:
     def __init__(self):
         self.api_key = os.environ.get("GROQ_API_KEY")
         self.api_url = "https://api.groq.com/openai/v1/chat/completions"
-        self.model = "llama-3.1-8b-instant"
+        self.model = "openai/gpt-oss-120b"
         self.system_context = os.environ.get("BUSINESS_CONTEXT", "Sen yardımcı bir asistanı.")
 
     def yanit_uret(self, mesaj, gecmis=None):
