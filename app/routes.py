@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, request, render_template
 from services import ai_service
 from app.database import lead_ekle, tum_leadler
-
+from flask_cors import CORS
 views = Blueprint('views', __name__)
 api = Blueprint('api', __name__)
-
+CORS(api)
 @views.route('/')
 def index():
     return render_template('index.html')
