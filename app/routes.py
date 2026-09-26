@@ -15,6 +15,8 @@ def dashboard():
 
 @api.route('/sohbet/', methods=['POST','OPTIONS'])
 def sohbet():
+    if request.methods== 'OPTIONS':
+        return'', 200
     data = request.json
     mesaj = data.get('mesaj')
     cevap = ai_service.ai_service.yanit_uret(mesaj, [])
