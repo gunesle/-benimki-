@@ -6,7 +6,7 @@ from app.database import init_db
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
-
+    CORS(app)
    #@app.after_request
     #def add_csp(response):
      #   response.headers['Content-Security-Policy'] = "default-src 'self'; img-src 'self' blob:; media-src 'self' blob:;"
