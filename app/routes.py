@@ -13,7 +13,7 @@ def index():
 def dashboard():
     return render_template('dashboard.html')
 
-@api.route('/sohbet/', methods=['POST','OPTIONS'])
+@api.route('/sohbet', methods=['POST','OPTIONS'])
 def sohbet():
     if request.methods== 'OPTIONS':
         return'', 200
