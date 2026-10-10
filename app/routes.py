@@ -13,10 +13,8 @@ def index():
 def dashboard():
     return render_template('dashboard.html')
 
-@api.route('/sohbet', methods=['POST','OPTIONS'])
+@api.route('/sohbet', methods=['POST'])
 def sohbet():
-    if request.methods== 'OPTIONS':
-        return'', 200
     data = request.json
     mesaj = data.get('mesaj')
     cevap = ai_service.ai_service.yanit_uret(mesaj, [])
